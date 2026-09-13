@@ -36,7 +36,7 @@ Here, it's clear to see that \( x = 0 \) is the _minimizer_ of \( P_3 \), and th
 
 Generally, the problem of solving NLPs is, unfortunately, __NP-hard__.
 
-::theorem[Hardness of NLP]
+::mathblock[Theorem][Hardness of NLP]
 
 Let \( P \) be an NLP.  Then, solving \( P \), in general, is NP-hard.
 
@@ -46,7 +46,7 @@ Let \( P \) be an NLP.  Then, solving \( P \), in general, is NP-hard.
 
 Before I continue, I want to define NP-hardness explicitly.  Informally, a problem is NP-hard if any problem in NP can be converted into the problem in question.
 
-::definition[Hardness]
+::mathblock[Definition][Hardness]
 
 A problem \( Q \) is _NP-hard_ if, for every problem \( R \) in NP, there exists a polynomial-time reduction \( L \) such that \( L(R) \) rewrites \( R \) as \( Q \).
 
@@ -56,7 +56,7 @@ A problem \( Q \) is _NP-hard_ if, for every problem \( R \) in NP, there exists
 
 I also have two lemmas to present, which will help me significantly in proving the main theorem.
 
-::lemma[Hardness of SAT]
+::mathblock[Lemma][Hardness of SAT]
 
 The problem of Boolean satisfiability (SAT) is NP-hard in the number of decision variables.  The problem of Boolean satisfiability is parameterized by decision variables \( x_i \) for \( i = 1, \cdots, N \) and an expression in conjunctive normal form (CNF), involving a finite number of terms joined by AND, where each term is a finite number of terms joined by OR.  For example, the following is CNF. 
 
@@ -64,7 +64,7 @@ The problem of Boolean satisfiability (SAT) is NP-hard in the number of decision
 
 ::endmath
 
-::lemma[Polynomial-time reduction of SAT to NLP]
+::mathblock[Lemma][Polynomial-time reduction of SAT to NLP]
 
 SAT can be reduced to an NLP by introducing constraint
 
@@ -86,7 +86,7 @@ Note that we have abused notation to omit cases of negatives like \( \neg x_1 \)
 
 We can now prove our main theorem!
 
-::proof[Hardness of NLP]
+::mathblock[Proof][Hardness of NLP]
 
 By the second lemma, any SAT problem can be reduced to an NLP in \( O(N + kn) \) time.  Therefore, a polynomial-time reduction \( L_1 \) exists from SAT to NLP.  By the first lemma, SAT is NP-hard, which means there exists a polynomial-time reduction \( L_2 \) exists from any problem in NP to SAT.  Therefore, the reduction \( L_3 := L_1(L_2(\cdot)) \) is polynomial-time.  This means that \( L_3 \) is a polynomial-time reduction from any problem in NP to NLP.  By Definition 1, the existence of \( L_3 \) implies NLP is NP-hard.  \( \blacksquare \)
 

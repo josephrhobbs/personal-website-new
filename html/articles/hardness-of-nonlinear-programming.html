@@ -20,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link href="/prism.css" rel="stylesheet" />
 <script src="/prism.js"></script>
@@ -82,7 +82,7 @@
 
 <p>Generally, the problem of solving NLPs is, unfortunately, <strong>NP-hard</strong>.</p>
 
-<div class="mathblock"><strong>Theorem. </strong><em>Hardness of NLP.</em><br>
+<div class="mathblock"><span>Theorem. Hardness of NLP</span>
 
 <p>Let \( P \) be an NLP.  Then, solving \( P \), in general, is NP-hard.</p>
 
@@ -92,7 +92,7 @@
 
 <p>Before I continue, I want to define NP-hardness explicitly.  Informally, a problem is NP-hard if any problem in NP can be converted into the problem in question.</p>
 
-<div class="mathblock"><strong>Definition. </strong><em>Hardness.</em><br>
+<div class="mathblock"><span>Definition. Hardness</span>
 
 <p>A problem \( Q \) is <em>NP-hard</em> if, for every problem \( R \) in NP, there exists a polynomial-time reduction \( L \) such that \( L(R) \) rewrites \( R \) as \( Q \).</p>
 
@@ -102,7 +102,7 @@
 
 <p>I also have two lemmas to present, which will help me significantly in proving the main theorem.</p>
 
-<div class="mathblock"><strong>Lemma. </strong><em>Hardness of SAT.</em><br>
+<div class="mathblock"><span>Lemma. Hardness of SAT</span>
 
 <p>The problem of Boolean satisfiability (SAT) is NP-hard in the number of decision variables.  The problem of Boolean satisfiability is parameterized by decision variables \( x_i \) for \( i = 1, \cdots, N \) and an expression in conjunctive normal form (CNF), involving a finite number of terms joined by AND, where each term is a finite number of terms joined by OR.  For example, the following is CNF. </p>
 
@@ -110,7 +110,7 @@
 
 </div>
 
-<div class="mathblock"><strong>Lemma. </strong><em>Polynomial-time reduction of SAT to NLP.</em><br>
+<div class="mathblock"><span>Lemma. Polynomial-time reduction of SAT to NLP</span>
 
 <p>SAT can be reduced to an NLP by introducing constraint</p>
 
@@ -132,7 +132,7 @@
 
 <p>We can now prove our main theorem!</p>
 
-<div class="mathblock"><strong>Proof. </strong><em>Hardness of NLP.</em><br>
+<div class="mathblock"><span>Proof. Hardness of NLP</span>
 
 <p>By the second lemma, any SAT problem can be reduced to an NLP in \( O(N + kn) \) time.  Therefore, a polynomial-time reduction \( L_1 \) exists from SAT to NLP.  By the first lemma, SAT is NP-hard, which means there exists a polynomial-time reduction \( L_2 \) exists from any problem in NP to SAT.  Therefore, the reduction \( L_3 := L_1(L_2(\cdot)) \) is polynomial-time.  This means that \( L_3 \) is a polynomial-time reduction from any problem in NP to NLP.  By Definition 1, the existence of \( L_3 \) implies NLP is NP-hard.  \( \blacksquare \)</p>
 

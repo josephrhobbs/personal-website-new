@@ -18,7 +18,7 @@ Needless to say, we'd like to be able to anticipate conjunction events and corre
 
 Imagine that two fictitious telecommunications companies, Acme Satellite and General Communications (GenCom), have both deployed communications satellites into equatorial orbits in LEO.  However, though Acme has decided to orbit their satellite prograde (counterclockwise, when viewed from the north pole), GenCom had the unusual idea of orbiting retrograde (clockwise).  In our model, we will assume that both satellites orbit at exactly the same altitude \( h \), and the only non-negligible gravitational force is the Earth, which we will model as a perfect sphere with radius \( R \), uniform density, and mass \( M \).
 
-::definition[Conjunction Point]
+::mathblock[Definition][Conjunction Point]
 
 We take an Earth-centered inertial reference frame.  The equatorial plane, given by \( z = 0 \), contains the orbits of both the Acme and GenCom satellites.  We will call the __conjunction point__ \( P \) the point \( \begin{bmatrix} R + h & 0 \end{bmatrix}^\mathrm{T} \).  At a defined time in the near future, both the Acme and GenCom satellites will pass through \( P \).
 
@@ -26,7 +26,7 @@ We take an Earth-centered inertial reference frame.  The equatorial plane, given
 
 Suppose that we know both satellites are in the equatorial plane, but we have some _uncertainty_ on their position in that plane.
 
-::definition[Generative Models for Position Measurement]
+::mathblock[Definition][Generative Models for Position Measurement]
 
 At the time when both satellites pass through \( P \), the measured position of each satellite will obey the following generative models.  Here, \( \hat{x} \) denotes a measured position and \( x \) denotes a true position.
 
@@ -42,7 +42,7 @@ Here, both \( \varepsilon \) variables are modeled as Gaussian measurement noise
 
 Now that we've quantified the conjunction point and the measurement uncertainties, we can define spacecraft __probability of collision__.  It turns out, however, that we won't actually care about this probability when we formulate our optimization program.  Rather, we'll care about the __relative position at conjunction__, which is easily determined using orbital dynamics simulation.
 
-::definition[Probability of Collision and Relative Position]
+::mathblock[Definition][Probability of Collision and Relative Position]
 
 At the conjunction point \( P \), the Acme and GenCom satellites will experience their closest approach, which may involve collision.  At conjunction, we can define as the _b-plane_ the plane perpendicular to the relative velocity between the two satellites.  It is important to observe that, at conjunction, the relative position will lie completely within the b-plane.  In our case, the b-plane is defined by \( y = z = 0 \), because their relative velocity will lie entirely in the \( y \) direction.
 
@@ -72,7 +72,7 @@ Let's recap what we've done so far.  We've determined a way to compute probabili
 
 Not necessarily.  Let's assume (for convenience of calculation) that you have one opportunity to save your satellite, by burning tangent to your orbit at exactly one half of an orbit before conjunction (namely, at \( \begin{bmatrix} -(R + h) & 0 \end{bmatrix}^\mathrm{T} \)).  However, you want to burn the minimum amount of fuel possible, because fuel is expensive and you want to maximize the lifespan of your satellite (no fuel means no more corrective maneuvers).  We'll also assume that fuel use is monotonically increasing in magnitude of velocity change; more velocity change, more fuel used.  It turns out we can relate velocity change to changes in the satellite's orbit using an important result from orbital mechanics: the Vis-Viva equation.
 
-::theorem[Vis-Viva Equation]
+::mathblock[Theorem][Vis-Viva Equation]
 
 Assume an object of mass \( m \) is orbiting a central body with mass \( M \gg m \) in an elliptical orbit with semimajor axis \( a \).  Then, when the body is a distance \( r \) from the center of the central body, the orbital velocity of that body is
 
@@ -146,7 +146,7 @@ and rewrite \( P \) in terms of \( M \) instead of \( u \).  Notice that \( M \)
 
 This is no better than before; the set of all rank-1 matrices is nonconvex, so we haven't really fixed our problem.  But this is where Shor's relaxation takes the lead!  So that you can appreciate the full elegance of the relaxation, I've outlined the full proof for why it works.  You may, of course, skip ahead if you are not interested!
 
-::theorem[Shor's Relaxation]
+::mathblock[Theorem][Shor's Relaxation]
 
 Given a rank-1 program \( P \) in decision variables \( M \), the program can be relaxed to SDP \( Q \) by replacing the constraint \( \mathrm{rank}(M) = 1 \) with the constraint \( M \succeq 0 \) (in other words, all eigenvalues of \( M \) are positive).  If the minimizer \( M^\star \) of SDP \( Q \) is rank-1, then the minimizer of \( P \) is \( M^\star \).
 
@@ -154,7 +154,7 @@ Given a rank-1 program \( P \) in decision variables \( M \), the program can be
 
 ### Proof of Shor's Relaxation
 
-::lemma[Nonconvexity of Rank-1]
+::mathblock[Lemma][Nonconvexity of Rank-1]
 
 The set of all rank-1 matrices is nonconvex.  We prove this by counterexample.  Consider
 
@@ -170,7 +170,7 @@ It can be shown by graphical analysis that the convex combination has exactly on
 
 ::endmath
 
-::lemma[Convexity of Positive Semidefinite Set]
+::mathblock[Lemma][Convexity of Positive Semidefinite Set]
 
 The set of all positive semidefinite (psd) matrices is convex.  A psd matrix \( M \) obeys
 
@@ -184,7 +184,7 @@ where \( k_1, k_2 \ge 0 \) because \( M_1 \) and \( M_2 \) are psd.  A convex co
 
 ::endmath
 
-::lemma[Rank-1 Matrices are Positive Semidefinite]
+::mathblock[Lemma][Rank-1 Matrices are Positive Semidefinite]
 
 Every rank-1 matrix is psd.  Consider the rank-1 matrix \( M := q q^\mathrm{T} \) for some column vector \( q \).
 
@@ -194,7 +194,7 @@ Here, \( c = q^\mathrm{T} x \).  Therefore, by the definition of a psd matrix, e
 
 ::endmath
 
-::proof[Shor's Relaxation]
+::mathblock[Proof][Shor's Relaxation]
 
 Every rank-1 matrix is psd, by the third lemma.  Therefore, by changing the constraint \( \mathrm{rank}(M) = 1 \) to \( M \succeq 0 \) (meaning "M is psd"), we are not excluding any possible solutions (we are making the feasible region strictly larger).  Let \( Q \) be the relaxation of \( P \); that is, \( P \) had the rank-1 constraint and \( Q \) has the psd constraint.  \( P \) is nonconvex by the first lemma, but \( Q \) is convex by the second lemma.  Then, if \( M^\star \) is the minimizer of \( Q \), it minimizes the objective function within the set of all psd matrices.
 

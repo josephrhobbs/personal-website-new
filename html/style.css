@@ -79,7 +79,6 @@
 
     p {
         line-height: 40px;
-        text-align: justify;
     }
 
     div.tile {
@@ -196,29 +195,6 @@
         font-size: 24px;
         color: gray;
     }
-
-    div.byline {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        min-height: 100px;
-        height: auto;
-        border-radius: 20px;
-        text-decoration: none;
-        color: rgb(85, 85, 85);
-        font-size: 24px;
-        font-family: "Fira Code", monospace;
-        font-weight: 600;
-    }
-
-    div.mathblock {
-        padding: 24px;
-        margin-bottom: 24px;
-        background-color: rgb(220, 220, 220);
-        border-radius: 12px;
-    }
 }
 
 @media screen and (max-device-width: 768px) {
@@ -294,7 +270,6 @@
     p {
         line-height: 96px;
         margin-bottom: 42px;
-        text-align: justify;
     }
 
     div.tile {
@@ -401,118 +376,5 @@
         letter-spacing: 4px;
         font-size: 36px;
         color: gray;
-    }
-
-    div.byline {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 180px;
-        height: auto;
-        border-radius: 20px;
-        text-decoration: none;
-        color: rgb(85, 85, 85);
-        font-size: 54px;
-        font-family: "Fira Code", monospace;
-        font-weight: 600;
-    }
-
-    div.mathblock {
-        padding: 24px;
-        margin-bottom: 24px;
-        background-color: rgb(220, 220, 220);
-        border-radius: 12px;
-    }
-}
-
-@media print {
-    body {
-        background-color: white;
-        font-size: 18px;
-        line-height: 24px;
-        font-family: "EB Garamond", serif;
-        padding-bottom: 80px;
-    }
-
-    h1 {
-        color: var(--spaceblue);
-        font-size: 48px;
-        display: flex;
-        justify-content: center;
-        margin-top: 80px;
-        margin-bottom: 0px;
-        font-family: "Outfit", sans-serif;
-    }
-
-    h2 {
-        color: darkblue;
-        font-style: italic;
-        font-size: 36px;
-        font-family: "Outfit", sans-serif;
-        transition: 0.4s;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-
-    h3 {
-        color: black;
-        font-size: 24px;
-        font-family: monospace;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-family: "Outfit", sans-serif;
-    }
-
-    h4 {
-        color: var(--spaceblue);
-        display: flex;
-        justify-content: center;
-        font-family: "Outfit", sans-serif;
-        font-weight: 300;
-        font-size: 20px;
-        margin-top: 40px;
-        margin-bottom: 12px;
-        letter-spacing: 4px;
-    }
-
-    a {
-        color: var(--flamered);
-        text-decoration: none;
-    }
-    
-    div.menu {
-        display: none;
-    }
-
-    img.float {
-        border-radius: 12px;
-        margin-top: 12px;
-        margin-bottom: 12px;
-        margin-left: 0px;
-        margin-right: 24px;
-        width: 25%;
-        height: auto;
-        display: block;
-        float: left;
-    }
-
-    img.full {
-        border-radius: 12px;
-        margin-top: 12px;
-        margin-bottom: 12px;
-        margin-left: 0px;
-        margin-right: 24px;
-        width: 50%;
-        height: auto;
-        display: block;
-    }
-
-    div.mathblock {
-        padding: 24px;
-        margin-bottom: 24px;
-        border: 2px solid black;
-        border-radius: 12px;
     }
 }

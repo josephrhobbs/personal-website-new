@@ -4,13 +4,13 @@
 
 ::float[Joseph having breakfast][/media/me.jpg]
 
-Hello!  My name is Joseph, and I'm an engineer living and working in Durham, NC.
+Hello!  My name is Joseph, and I'm an engineer, (recreational) applied mathematics enthusiast, and computer nerd.
 
-I graduated from MIT in May 2025 with a bachelor's degree in Aerospace Engineering.  I'm incredibly grateful for the diversity of subjects I had the opportunity to study at the Institute.  That said, my studies particularly focused on the application of novel analytical and computational methods to the pedagogy and practice of engineering.
+I graduated from MIT in May 2025 with a bachelor's degree in Aerospace Engineering.  I'm incredibly grateful for the diversity of subjects I had the opportunity to study at the Institute.  That said, my studies particularly focused on the application of analytical and computational methods to the pedagogy and practice of engineering and systems design.
 
 My academic interests include electrical and electronics engineering; continuum mechanics, including aerodynamics, fluid mechanics, and the mechanics of solids; the theory of probability and stochastic processes; and algorithms for perception, control, and optimization.  I also believe that quality education is wonderfully freeing... and for that reason, I am passionate about teaching engineering and science topics.
 
-In late 2025, I commissioned into the U.S. Army Reserve, and I'll be serving our nation as a Cyber Warfare Officer starting in early 2026.
+In late 2025, I commissioned into the U.S. Army Reserve, and I've since been serving the nation as a Cyber Warfare Officer as of early 2026.
 
 When I'm not working or studying, I enjoy spending time with the people in my life I love and care about.  I also enjoy running, playing the piano and guitar, and volunteering with my Catholic community.
 
@@ -20,7 +20,7 @@ Thank you for visiting my website!  I welcome you to explore it and learn more a
 
 I'd love to hear from you!  The best method for reaching me is electronic mail.  Please contact me at
 
-::titled[My contact information][/media/contact.png][You can also reach me by owl or carrier pigeon, though in practice I've found email most reliable.]
+::titled[My contact information][/media/contact.png][You can always reach me by owl or carrier pigeon, but in practice I've found email most reliable.]
 
 and I will respond within the week.  (I've refrained from providing my address by the normal means to deter web scrapers.)
 
